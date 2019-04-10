@@ -23,6 +23,17 @@
                     </a>
                 </div>
 
+
+                <form action="{{route('notebooks.search')}}" method="POST" class="form-inline">
+                    {{ csrf_field() }}
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="search"
+                            placeholder="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </span>
+                    </div>
+                </form>
+
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                  document.getElementById('logout-form').submit();">

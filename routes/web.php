@@ -12,6 +12,8 @@
 */
 
 use App\Notebook;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
@@ -37,5 +39,6 @@ Route::group(['middleware'=>'auth'], function () {
     Route::get('/notes/edit/{note_id}/{notebook_id}', 'NotesController@showEditForm')->name('notes.edit');
     Route::put('/notes/update/{note_id}/{notebook_id}', 'NotesController@updateNote')->name('notes.update');
     Route::get('/notes/details/{id}', 'NotesController@showDetails')->name('notes.details');
+    Route::post('/notebooks/search', 'NotebooksController@search')->name('notebooks.search');
 
 });
